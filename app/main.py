@@ -36,6 +36,7 @@ async def categorize_informations_with_confidence(data: ClassificationInput, n: 
     '''Categorizes a query into one of the predefined categories with confidence scores.'''
     collector = Collector(name="my-collector")
     client_registry = ClientRegistry()
+    client_registry.set_primary("CustomGenericProviderTemp")
     my_b = b.with_options(collector=collector, client_registry=client_registry)
 
     res =  await categorize_with_confidence(data, my_b, n)

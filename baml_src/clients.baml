@@ -3,12 +3,22 @@ client<llm> CustomGenericProvider {
   retry_policy Constant
   options {
     base_url "https://api.studio.nebius.com/v1/"
-    model "meta-llama/Meta-Llama-3.1-70B-Instruct" // 
+    model "meta-llama/Meta-Llama-3.1-70B-Instruct"
     api_key env.NEBIUS_API_KEY
     temperature 0.0
   }
 }
 
+client<llm> CustomGenericProviderTemp {
+  provider openai-generic
+  retry_policy Constant
+  options {
+    base_url "https://api.studio.nebius.com/v1/"
+    model "meta-llama/Meta-Llama-3.1-70B-Instruct"
+    api_key env.NEBIUS_API_KEY
+    temperature 0.6
+  }
+}
 
 // https://docs.boundaryml.com/docs/snippets/clients/retry
 retry_policy Constant {
