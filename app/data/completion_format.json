@@ -1,0 +1,67 @@
+{
+  "title":"Customer Information Form",
+  "type":"object",
+  "properties":{
+    "personal_info":{
+      "type":"object",
+      "properties":{
+        "first_name":{
+          "type":"string",
+          "description":"The customer's first name"
+        },
+        "last_name":{
+          "type":"string",
+          "description":"The customer's last name"
+        },
+        "gender":{
+          "type":"string",
+          "enum":[
+            "Male",
+            "Female",
+            "Other"
+          ],
+          "description":"The customer's gender"
+        }
+      },
+      "required":[
+        "first_name",
+        "last_name",
+        "gender"
+      ]
+    },
+    "contact_info":{
+      "type":"object",
+      "properties":{
+        "email":{
+          "type":"string",
+          "format":"email",
+          "description":"The customer's email address"
+        },
+        "phone":{
+          "type":"string",
+          "description":"The customer's phone number"
+        },
+        "preferred_contact_method":{
+          "type":"string",
+          "enum":[
+            "Email",
+            "Phone"
+          ],
+          "description":"The customer's preferred method of contact"
+        },
+        "call_reasons":{
+          "type":"array",
+          "items":{
+            "type":"string"
+          },
+          "description":"The reasons for the call",
+          "minItems":1
+        }
+      }
+    }
+  },
+  "required":[
+    "personal_info",
+    "contact_info"
+  ]
+}
