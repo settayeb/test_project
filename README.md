@@ -69,8 +69,9 @@ test_project/
    ```
 
 3. **Générer les fichiers baml** :
-
-
+    ```bash
+    uv run baml-cli generate
+    ```
 4. **Configurer les variables d'environnement** :
    La variable environemental NEBIUS_API_KEY doit contenir votre clé API
 
