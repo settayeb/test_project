@@ -59,8 +59,8 @@ test_project/
 
 1. **Cloner ou naviguer vers le projet** :
    ```bash
-    git clone <URL_DU_DEPOT>
-    cd test_swiss_life
+    git clone https://github.com/settayeb/test_project
+    cd test_project
    ```
 
 2. **Installer les dépendances avec UV** :
